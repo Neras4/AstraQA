@@ -9,13 +9,13 @@ public class ActionUtils {
             LoggingUtils.logInfo(description);
             LoggingUtils.logDebug(String.format("Performing action: %s", description));
 
-            highlightElement(page, elementLocator);
+            highlightElement(elementLocator);
 
             ScreenshotUtils.takeScreenshot(page,  CommonUtils.generateUniqueName(description) + "_before");
             action.run();
             ScreenshotUtils.takeScreenshot(page,  CommonUtils.generateUniqueName(description) + "_after");
 
-            removeHighlight(page, elementLocator);
+            removeHighlight(elementLocator);
 
             LoggingUtils.logDebug(String.format("Action performed: %s", description));
         } catch (Exception e) {
@@ -24,11 +24,11 @@ public class ActionUtils {
         }
     }
 
-    private static void highlightElement(Page page, Locator element) {
+    private static void highlightElement(Locator element) {
         if(element.isVisible()) element.evaluate("el => el.style.border = '5px solid red'");
     }
 
-    private static void removeHighlight(Page page, Locator element) {
+    private static void removeHighlight(Locator element) {
         if(element.isVisible()) element.evaluate("el => el.style.border = 'none'");
     }
 }

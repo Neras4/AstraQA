@@ -1,7 +1,5 @@
 package org.example.astraqa.utils;
 
-import java.util.UUID;
-
 public class CommonUtils {
     public static String generateUniqueName(String base) {
         return base.replace(" ", "_")
