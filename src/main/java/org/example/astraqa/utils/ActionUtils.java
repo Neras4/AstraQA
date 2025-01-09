@@ -9,11 +9,15 @@ public class ActionUtils {
             LoggingUtils.logInfo(description);
             LoggingUtils.logDebug(String.format("Performing action: %s", description));
 
+            if(!WebTestUtils.waitForElementVisible(elementLocator, 4000)) {
+                LoggingUtils.logDebug(String.format("Element not visible for action: %s", description));
+                throw new RuntimeException(String.format("Element not visible for action: %s", description));
+            }
+
             highlightElement(elementLocator);
 
             ScreenshotUtils.takeScreenshot(page,  CommonUtils.generateUniqueName(description) + "_before");
             action.run();
-            ScreenshotUtils.takeScreenshot(page,  CommonUtils.generateUniqueName(description) + "_after");
 
             removeHighlight(elementLocator);
 

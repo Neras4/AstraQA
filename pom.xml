@@ -77,6 +77,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                     <systemPropertyVariables>
                         <allure.results.directory>target/allure-results</allure.results.directory>
                     </systemPropertyVariables>
@@ -99,6 +102,9 @@
                                     <directory>${project.build.directory}/allure-results/screenshots</directory>
                                 </fileset>
                                 <fileset>
+                                    <directory>${project.build.directory}/allure-results</directory>
+                                </fileset>
+                                <fileset>
                                     <directory>${project.build.directory}/logs</directory>
                                 </fileset>
                             </filesets>
@@ -107,8 +113,5 @@
                 </executions>
             </plugin>
         </plugins>
-
     </build>
-
-
 </project>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="UI Tests Suite">
+    <test name="Start Page Tests">
+        <classes>
+            <class name="org.example.astraqa.tests.ST.StartPageTest">
+                <methods>
+                    <include name="testOpenLoginPage"/>
+                    <include name="testOpenCartPage"/>
+                    <include name="testChooseServiceType"/>
+                    <include name="testSearchDomain"/>
+                    <include name="testMenuBar"/>
+                    <include name="testChooseDataCenter"/>
+                    <include name="testClickButton"/>
+                    <include name="testClickChatWIthUsButton"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cart Hosting Page Tests">
+        <classes>
+            <class name="org.example.astraqa.tests.ST.CartHostingPageTest">
+                <methods>
+                    <include name="testChangeTermLength"/>
+                    <include name="testSelectDataCenterLocation"/>
+                    <include name="testSelectControlPanelOption"/>
+                    <include name="testSelectOperationSystem"/>
+                    <include name="testSelectBandwidth"/>
+                    <include name="testSelectActiveSecurity"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cart Hosting Page for Empty Cart Tests">
+        <classes>
+            <class name="org.example.astraqa.tests.ST.CartHostingPageEmptyCartTest">
+                <methods>
+                    <include name="testCancelEmptyCart"/>
+                    <include name="testEmptyCart"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
